@@ -18,7 +18,8 @@
     "require": {
         "php": "^8.0|^8.1",
         "spatie/laravel-package-tools": "^1.14.0",
-        "illuminate/contracts": "^10.0"
+        "illuminate/contracts": "^10.0",
+        "ext-bcmath": "*"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -35,8 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelPay\\Support\\": "src/",
-            "LaravelPay\\Support\\Database\\Factories\\": "database/factories/"
+            "LaravelPay\\Support\\": "src/"
         }
     },
     "autoload-dev": {
@@ -62,12 +62,9 @@
         "laravel": {
             "providers": [
                 "LaravelPay\\Support\\SupportServiceProvider"
-            ],
-            "aliases": {
-                "Support": "LaravelPay\\Support\\Facades\\Support"
-            }
+            ]
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
