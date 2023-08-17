@@ -4,7 +4,6 @@ namespace LaravelPay\Support;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use LaravelPay\Support\Commands\SupportCommand;
 
 class SupportServiceProvider extends PackageServiceProvider
 {
