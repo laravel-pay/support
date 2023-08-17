@@ -1,57 +1,26 @@
-# :package_description
+# Support
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-<!--delete-->
----
-This repo can be used to scaffold a Laravel Pay package. Follow these steps to get started:
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-pay/support.svg?style=flat-square)](https://packagist.org/packages/laravel-pay/support)
+[![Total Downloads](https://img.shields.io/packagist/dt/laravel-pay/support.svg?style=flat-square)](https://packagist.org/packages/laravel-pay/support)
 
-1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
----
-<!--/delete-->
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+### Support package is a collection of helpers and tools for laravel pay.
+
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require :vendor_slug/:package_slug
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
-php artisan migrate
+composer require laravel-pay/support
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag=":package_slug-views"
+php artisan vendor:publish --tag="support-config"
 ```
 
 ## Usage
-
-```php
-$variable = new VendorName\Skeleton();
-echo $variable->echoPhrase('Hello, VendorName!');
-```
 
 ## Testing
 
@@ -73,7 +42,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [elsayed kamal](https://github.com/laravel-pay)
 - [All Contributors](../../contributors)
 
 ## License
