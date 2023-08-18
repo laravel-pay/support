@@ -23,15 +23,15 @@ class Digit
      * Converts a number into a short version.
      * eg: 1000 >> 1K.
      */
-    public function toShort(float $number, int $precision = 1, ?string $suffix = null): string
+    public function toShort(float $number, int $precision = 1, string $suffix = null): string
     {
         $length = strlen((string) ((int) $number));
         $length = ceil($length / 3) * 3 + 1;
 
         $suffix = $this->suffix($length, $suffix);
-        $value  = $this->rounded($number, $length, $precision);
+        $value = $this->rounded($number, $length, $precision);
 
-        return $value . $suffix;
+        return $value.$suffix;
     }
 
     /**
@@ -45,7 +45,7 @@ class Digit
         $mod = $number % $length;
 
         while ($mod > 0 || $number > 0) {
-            $result = Str::substr($chars, $mod, 1) . ($result ?? '');
+            $result = Str::substr($chars, $mod, 1).($result ?? '');
 
             $number = ($number - $mod) / $length;
 
@@ -73,14 +73,14 @@ class Digit
         return (string) $value;
     }
 
-    protected function suffix(int $length = 0, ?string $suffix = null): string
+    protected function suffix(int $length = 0, string $suffix = null): string
     {
         $available = [
-            4  => '' . $suffix,
-            7  => 'K' . $suffix,
-            10 => 'M' . $suffix,
-            13 => 'B' . $suffix,
-            16 => 'T' . $suffix . '+',
+            4 => ''.$suffix,
+            7 => 'K'.$suffix,
+            10 => 'M'.$suffix,
+            13 => 'B'.$suffix,
+            16 => 'T'.$suffix.'+',
         ];
 
         return $available[$length] ?? Arr::last($available);
