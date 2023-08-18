@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+use LaravelPay\Console\MakeExceptionCommand;
+use Symfony\Component\Console\Application;
+
+require __DIR__.'/vendor/autoload.php'; // path to composer autoload.php
+
+$app = new Application('Laravel Package Console', 'v1.0.0');
+$app->add(new MakeExceptionCommand());
+$app->run();

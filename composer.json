@@ -36,7 +36,8 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelPay\\Support\\": "src/"
+            "LaravelPay\\Support\\": "src/",
+            "LaravelPay\\Console\\": "Console/"
         }
     },
     "autoload-dev": {
@@ -65,6 +66,9 @@
             ]
         }
     },
+    "bin": [
+        "artisan"
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true
 }
