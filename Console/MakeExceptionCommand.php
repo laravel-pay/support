@@ -8,22 +8,25 @@ class MakeExceptionCommand extends Command
 
     protected string $description = 'Create exception class';
 
+    protected string $stub = 'exception';
+
     protected function execute($input, $output): int
     {
         $name = $input->getArgument('name');
-        $name = ucfirst($name);
 
         if (! str_ends_with($name, 'Exception')) {
             $name .= 'Exception';
         }
 
-        $path = $this->getPackagePath('Exceptions/'.$name.'.php');
+        $path = 'Exceptions/'.ucfirst($name).'.php';
 
         $namespace = self::NAMESPACE_PREFIX.'Exceptions';
-        $stub = 'exception';
 
-        $this->createFileFromStub($output, $stub, $path, $name, $namespace);
-
-        return 0;
+        return (int) $this->createFileFromStub(
+            output : $output,
+            filePath : $path,
+            className : $name,
+            namespace : $namespace
+        );
     }
 }

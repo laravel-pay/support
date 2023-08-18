@@ -1,10 +1,13 @@
 <?php
 
-namespace {{namespace}};
+namespace {{ namespace }};
 
 use Exception;
 
-class {{name}} extends Exception
+class {{ class }} extends Exception
 {
-    //
+    public function boot{{ sayed }} ()
+        {
+
+        }
 }
