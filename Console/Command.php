@@ -2,16 +2,11 @@
 
 namespace LaravelPay\Console;
 
-use LaravelPay\Console\Traits\HasStubs;
 use Symfony\Component\Console\Command\Command as BaseCommand;
 use Symfony\Component\Console\Input\InputArgument;
 
 class Command extends BaseCommand
 {
-    use HasStubs;
-
-    public const NAMESPACE_PREFIX = 'LaravelPay\\Support\\';
-
     protected string $name;
 
     protected string $command;

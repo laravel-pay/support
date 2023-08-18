@@ -4,6 +4,8 @@ namespace LaravelPay\Console\Traits;
 
 trait HasStubs
 {
+    private string $namespacePrefix = 'LaravelPay\\Support\\';
+
     protected string $stub;
 
     public function getStubSourceFile(): string
@@ -11,7 +13,7 @@ trait HasStubs
         return __DIR__.'/../../stubs/'.$this->stub.'.stub';
     }
 
-    private function getStubVars()
+    private function getStubVars(): array
     {
         $stub = file_get_contents($this->getStubSourceFile());
         preg_match_all('/{{\s*(\w+)\s*}}/', $stub, $matches);
@@ -19,7 +21,7 @@ trait HasStubs
         return $matches[1];
     }
 
-    public function basePath()
+    public function basePath(): string
     {
         return __DIR__.'/../../src/';
     }
@@ -37,7 +39,7 @@ trait HasStubs
         $stubVars = $this->getStubVars();
 
         $keys = ['class', 'namespace'];
-        $values = [$className, $namespace];
+        $values = [$className, $this->namespacePrefix.$namespace];
 
         $otherKeys = array_keys($otherArguments);
         $otherValues = array_values($otherArguments);
@@ -62,7 +64,7 @@ trait HasStubs
         return true;
     }
 
-    private function stubReplace($stub, $keys, $values)
+    private function stubReplace($stub, $keys, $values): array|string
     {
         $keys = array_map(function ($key) {
             return '{{ '.$key.' }}';

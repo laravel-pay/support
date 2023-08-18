@@ -6,8 +6,4 @@ use Exception;
 
 class {{ class }} extends Exception
 {
-    public function boot{{ sayed }} ()
-        {
-
-        }
 }

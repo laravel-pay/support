@@ -2,8 +2,12 @@
 
 namespace LaravelPay\Console;
 
+use LaravelPay\Console\Traits\HasStubs;
+
 class MakeExceptionCommand extends Command
 {
+    use HasStubs;
+
     protected string $command = 'make:exception name';
 
     protected string $description = 'Create exception class';
@@ -20,13 +24,15 @@ class MakeExceptionCommand extends Command
 
         $path = 'Exceptions/'.ucfirst($name).'.php';
 
-        $namespace = self::NAMESPACE_PREFIX.'Exceptions';
+        $namespace = 'Exceptions';
 
-        return (int) $this->createFileFromStub(
+        $this->createFileFromStub(
             output : $output,
             filePath : $path,
             className : $name,
             namespace : $namespace
         );
+
+        return 0;
     }
 }
