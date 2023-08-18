@@ -6,8 +6,6 @@ trait HasStubs
 {
     private string $namespacePrefix = 'LaravelPay\\Support\\';
 
-    protected string $stub;
-
     public function getStubSourceFile(): string
     {
         return __DIR__.'/../../stubs/'.$this->stub.'.stub';

@@ -6,4 +6,6 @@ use Exception;
 
 class {{ class }} extends Exception
 {
+    //
 }
+
